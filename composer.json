@@ -1,0 +1,41 @@
+{
+    "name": "yemilgr/laravel-infogreffe",
+    "description": "Fetch data from infogreffe service",
+    "type": "liibrary",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Yemil Godinez",
+            "email": "yemilgr@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yemilgr\\Infogreffe\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Yemilgr\\Infogreffe\\Tests\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yemilgr\\Infogreffe\\InfogreffeServiceProvider"
+            ],
+            "aliases": {
+                "Infogreffe": "Yemilgr\\Infogreffe\\Facades\\Infogreffe"
+            }
+        }
+    },
+  
+    "require-dev": {
+        "orchestra/testbench": "^6.0",
+        "phpunit/phpunit": "^9.5"
+    },
+    "require": {
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "^7.3"
+    }
+}
