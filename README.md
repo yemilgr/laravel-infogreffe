@@ -17,12 +17,14 @@ return [
     // ...
     
     'infogreffe' => [
-        'token' => 'AXfBH56aWQcdCKRHkUAd9UcT1zsydYfQajOGeDfjmE3ztMBNbwWxxfu0xWi2'
+        'token' => env('INFOGREFFE_TOKEN', 'your-token-here')
     ]
 ]
 ```
 
 ## How to use it
+
+### Using Infogreffe Facade
 
 ```php
 use Yemilgr\Infogreffe\Facades\Infogreffe;
@@ -33,5 +35,31 @@ if ($enterpriseFiche) {
     dd($enterpriseFiche);
 }
 
-return Infogreffe::getLastError(); // Siren non trouvé
+return Infogreffe::getLastError(); // Ex: Siren non trouvé
+```
+
+### Using Laravel Dependency Injection in your Controllers or Classes
+
+```php
+use Yemilgr\Infogreffe\Infogreffe;
+
+class AppController extends Controller
+{
+    public function index(Infogreffe $infogreffe)
+    {
+        $enterpriseFiche = $infogreffe::getEnterpriceFiche('123456789');
+
+        if ($enterpriseFiche) {
+            dd($enterpriseFiche);
+        }
+
+        return $infogreffe->getLastError(); // Ex: Siren non trouvé
+    }
+}
+```
+
+### Command 
+
+```bash
+php artisan infogreffe:enterpriseFiche 123456789
 ```

@@ -5,6 +5,7 @@ namespace Yemilgr\Infogreffe\Tests\Unit;
 
 
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Yemilgr\Infogreffe\Entity\Address;
 use Yemilgr\Infogreffe\Entity\Enterprise;
@@ -25,7 +26,7 @@ class InfogreffeTest extends TestCase
     public function returns_instance_if_token_is_set()
     {
         // set token config
-        Config::set('services.infogreffe.token', '3AxR4z61tGk3QLxr9HK5smD18L5THkLBxa3TUwlgqsA24zx1v2Tsc2fqMqLETVE0');
+        Config::set('services.infogreffe.token', Str::random(64));
 
         $this->assertInstanceOf(Infogreffe::class, app('infogreffe'));
     }

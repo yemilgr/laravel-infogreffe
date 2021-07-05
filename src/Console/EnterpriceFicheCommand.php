@@ -15,7 +15,7 @@ class EnterpriceFicheCommand extends Command
 {
     protected $signature = 'infogreffe:enterpriseFiche {siren}';
 
-    protected $description = '';
+    protected $description = 'Fetch Enterprise Fiche';
 
     public function handle(Infogreffe $infogreffe)
     {
