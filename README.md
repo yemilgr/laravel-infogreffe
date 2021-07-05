@@ -29,7 +29,7 @@ return [
 ```php
 use Yemilgr\Infogreffe\Facades\Infogreffe;
 
-$enterpriseFiche = Infogreffe::getEnterpriceFiche('123456789');
+$enterpriseFiche = Infogreffe::getEnterpriseFiche('123456789');
 
 if ($enterpriseFiche) {
     dd($enterpriseFiche);
@@ -47,7 +47,7 @@ class AppController extends Controller
 {
     public function index(Infogreffe $infogreffe)
     {
-        $enterpriseFiche = $infogreffe::getEnterpriceFiche('123456789');
+        $enterpriseFiche = $infogreffe->getEnterpriseFiche('123456789');
 
         if ($enterpriseFiche) {
             dd($enterpriseFiche);

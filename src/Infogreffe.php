@@ -34,7 +34,7 @@ class Infogreffe
      * @param string $sirenNumber
      * @return Enterprise|null
      */
-    public function getEnterpriceFiche(string $sirenNumber)
+    public function getEnterpriseFiche(string $sirenNumber)
     {
         $response = Http::get("{$this->apiEndpoint}Entreprise/FicheIdentite/$sirenNumber", $this->apiToken);
 

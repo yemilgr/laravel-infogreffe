@@ -3,7 +3,7 @@
 namespace Yemilgr\Infogreffe;
 
 use Illuminate\Support\ServiceProvider;
-use Yemilgr\Infogreffe\Console\EnterpriceFicheCommand;
+use Yemilgr\Infogreffe\Console\EnterpriseFicheCommand;
 
 class InfogreffeServiceProvider extends ServiceProvider
 {
@@ -20,7 +20,7 @@ class InfogreffeServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
-                EnterpriceFicheCommand::class
+                EnterpriseFicheCommand::class
             ]);
         }
     }

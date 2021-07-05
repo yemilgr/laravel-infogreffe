@@ -38,7 +38,7 @@ class InfogreffeTest extends TestCase
 
         /** @var Infogreffe $infogreffe */
         $infogreffe = app('infogreffe');
-        $enterpriseFiche = $infogreffe->getEnterpriceFiche('123456789');
+        $enterpriseFiche = $infogreffe->getEnterpriseFiche('123456789');
 
         $this->assertInstanceOf(Enterprise::class, $enterpriseFiche);
         $this->assertInstanceOf(Address::class, $enterpriseFiche->Adresse);

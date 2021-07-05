@@ -8,10 +8,10 @@ use Illuminate\Console\Command;
 use Yemilgr\Infogreffe\Infogreffe;
 
 /**
- * Class EnterpriceFicheCommand
+ * Class EnterpriseFicheCommand
  * @package Yemilgr\Infogreffe\Console
  */
-class EnterpriceFicheCommand extends Command
+class EnterpriseFicheCommand extends Command
 {
     protected $signature = 'infogreffe:enterpriseFiche {siren}';
 
@@ -19,7 +19,7 @@ class EnterpriceFicheCommand extends Command
 
     public function handle(Infogreffe $infogreffe)
     {
-        $enterprise = $infogreffe->getEnterpriceFiche($this->argument('siren'));
+        $enterprise = $infogreffe->getEnterpriseFiche($this->argument('siren'));
 
         if (!$enterprise) {
             $this->error($infogreffe->getLastError());
